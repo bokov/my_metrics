@@ -1,0 +1,14 @@
+"table","origname","varname","dispname","comment"
+"dat01","RFA/FOA Number & Link","rfafoanumberlink","Var01",NA
+"dat01","Nickname","nickname","Nickname",NA
+"dat01","Started Preparation (bokov)","startedpreparationbo","Var02",NA
+"dat01","Next Deadline or Final Decisions","nextdeadlineorfinald","Var03",NA
+"dat01","What is due?","whatisdue","Var04",NA
+"dat01","Title","title","Title",NA
+"dat01","Project Folder","projectfolder","Var05",NA
+"dat01","Status or Next Steps","statusornextsteps","Var06",NA
+"dat01","Funding Date","fundingdate","Var07",NA
+"dat01","End Date","enddate","Var08",NA
+"dat01","PHS Staff %","phsstaff","Var09",NA
+"dat01","PI","pi","PI",NA
+"dat01","bokov %","bokov","Var10",NA
