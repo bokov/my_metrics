@@ -66,6 +66,32 @@ ggplot(dat02,aes(x=time,y=coverage)) +
   labs(alpha='Funding Source',fill='Funding Source') + 
   theme_linedraw();
 
+#+ repro
+# repro ----
+reproducibility <- tidbits:::git_status(print=F);
+if(identical(reproducibility$status,'')){
+  .repinfo0 <- '[%5$s commit](https://%3$s/%4$s/tree/%5$s) of the [%4$s](https://%3$s/%4$s) repository **%1$s** branch. You can download these scripts [here](https://%3$s/%4$s/archive/%5$s.zip)';
+  .repinfo1 <- 'you will generate a report that is identical to this one';
+} else {
+  .repinfo0 <- '[%4$s](https://%3$s/%4$s) repository **%1$s** branch';
+  .repinfo1 <- 'you should be able to generate a report that is similar to this one, but since the copy you are reading is a draft version, there may be differences due to subsequent revisions';
+}
+.repinfo0 <- with(reproducibility
+                  ,sprintf(.repinfo0,branch,tracking,githost,repo,hash));
+#' ## Reproducibility of these results.
+#'
+#' This report was automatically generated using scripts and lookup tables
+#' publicly shared in the `r .repinfo0`. In addition you will need the following
+#' data file:
+#+ datafile, results='markdown'
+inputdata[1] %>% cbind(file=basename(.),MD5sum=tools::md5sum(.)) %>%
+  `[`(,-1) %>% pander;
+
+#' The latest version of **`r basename(inputdata[1])`** can be obtained from 
+#' [OneDrive](https://uthealthsa-my.sharepoint.com/:x:/r/personal/bokov_uthscsa_edu/Documents/00%20Metrics/Grants%20and%20Papers.xlsx?d=w54c27c0ff19a4fe494165f612f1269db&csf=1&web=1&e=SjVFxb)
+#' if you were given access to that file.
+
+
 #+ saveresults
 # saveresults ----
 save(file=paste0(.currentscript,'.rdata'),list=setdiff(ls(),.origfiles));
