@@ -23,7 +23,7 @@ panderOptions('table.split.table',Inf);
 panderOptions('p.wrap','');
 panderOptions('p.copula',', and ');
 
-.currentscript <- current_scriptname('example_analysis.R');
+.currentscript <- current_scriptname('analysis.R');
 if(!exists('dat01')) dat01 <- get(names(inputdata)[1]);
 
 #+ prepdata
