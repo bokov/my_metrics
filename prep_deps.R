@@ -3,7 +3,7 @@
 #' ---
 #' 
 .projpackages <- c()
-.deps <- c( 'example_analysis.R','simdata.R'); 
+.deps <- c( 'example_analysis.R'); 
 #+ load_deps, echo=FALSE, messages=FALSE, warnings=FALSE
 .junk<-capture.output(source('./scripts/global.R',chdir=TRUE,echo=FALSE));
 #.currentscript <- parent.frame(2)$ofile;
