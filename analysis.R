@@ -70,6 +70,7 @@ ggplot(dat02,aes(x=time,y=coverage)) +
 # repro ----
 reproducibility <- tidbits:::git_status(print=F);
 reproducibility$url <- gsub('\\.git$','',reproducibility$url);
+reproducibility$repo <- gsub('\\.git$','',reproducibility$repo);
 if(identical(reproducibility$status,'')){
   .repinfo0 <- '[%5$s commit](https://%3$s/%4$s/tree/%5$s) of the [%4$s](https://%3$s/%4$s) repository **%1$s** branch. You can download these scripts [here](https://%3$s/%4$s/archive/%5$s.zip)';
   .repinfo1 <- 'you will generate a report that is identical to this one';
