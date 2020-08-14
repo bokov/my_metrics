@@ -45,7 +45,7 @@ clean_slate <- function(command="",removepatt='^\\.RData$|.*\\.[Rr]\\.rdata$|.*\
 }
 
 renameoutput <- function(file=get('.currentscript')
-                         ,fromdata=basename(get('inputdata')['dat03'])
+                         ,fromdata='' # basename(get('inputdata')['dat03'])
                          ,suffix='.html'){
   fromdata <- gsub('^[0-9]{10,12}_[0-9a-z]{5,7}',''
                    ,fromdata) %>% gsub('\\.[^.]*$','',.);
