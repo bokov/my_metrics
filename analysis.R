@@ -37,7 +37,7 @@ dat01$bokov <- coalesce(dat01$bokov,0.05);
 
 # Days between now and start of work on earliest documented grant
 time<-min(dat01$`Started Preparation (bokov)`,na.rm=TRUE) %>% 
-  seq(Sys.time(),by=60^2*24*7);
+  seq(Sys.time(),by=60^2*24);
 dat02 <- data.frame(time,source='Grant Pipeline',order=1
                     ,coverage = sapply(time,function(xx){
                       sum(subset(dat01,`What is due?`!='active' &
